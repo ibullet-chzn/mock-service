@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 output/
+app/
 project.config.json
 package-lock.json
 # Editor directories and files

@@ -11,23 +11,28 @@ router.get("/mock-service-dashboard", async ctx => {
   await ctx.render("index", { title });
 });
 
-const updateMock = () => {
-  let mockArray = getMockConfig().mockArray;
-  mockArray.map(item => {
+let mockObject = getMockConfig().mockObject;
+
+console.log(mockObject);
+
+const initMock = () => {
+  Object.keys(mockObject).map(keys => {
     // 转小写
-    router[item.type.toLowerCase()](item.url, ctx => {
+    router[mockObject[keys].type.toLowerCase()](keys, ctx => {
       ctx.body = encapsulationBody(
         "SUCCESS",
-        typeof item.render === "function" ? item.render() : item.render
+        typeof mockObject[keys].render === "function"
+          ? mockObject[keys].render()
+          : mockObject[keys].render
       );
     });
   });
 };
 
-updateMock();
+initMock();
 
 fs.watchFile(path.join(process.cwd(), "_mock.js"), () => {
-  updateMock();
+  mockObject = getMockConfig().mockObject;
 });
 
 export default router;

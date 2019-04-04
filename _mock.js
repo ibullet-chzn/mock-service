@@ -2,7 +2,6 @@
 // 无法引用其他任何文件
 
 const login = {
-  url: "/login",
   type: "GET",
   render: () => {
     return {
@@ -14,14 +13,13 @@ const login = {
 exports.module = {
   port: 9999,
   format: ["status", null, "data"],
-  mockArray: [
-    {
-      url: "/a",
+  mockObject: {
+    "/a": {
       type: "get",
       render: {
-        a: 1
+        a: 4
       }
     },
-    login
-  ]
+    "/login": login
+  }
 };

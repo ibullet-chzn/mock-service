@@ -1,5 +1,7 @@
 "use strict";
 exports.__esModule = true;
+var _keys = require("babel-runtime/core-js/object/keys");
+var _keys2 = _interopRequireDefault(_keys);
 var _regenerator = require("babel-runtime/regenerator");
 var _regenerator2 = _interopRequireDefault(_regenerator);
 var _asyncToGenerator2 = require("babel-runtime/helpers/asyncToGenerator");
@@ -51,25 +53,30 @@ router.get(
   })()
 );
 
-var updateMock = function updateMock() {
-  var mockArray = (0, _mockConfig2.default)().mockArray;
-  mockArray.map(function(item) {
+var mockObject = (0, _mockConfig2.default)().mockObject;
+
+console.log(mockObject);
+
+var initMock = function initMock() {
+  (0, _keys2.default)(mockObject).map(function(keys) {
     // 转小写
-    router[item.type.toLowerCase()](item.url, function(ctx) {
+    router[mockObject[keys].type.toLowerCase()](keys, function(ctx) {
       ctx.body = (0, _encapsulation2.default)(
         "SUCCESS",
-        typeof item.render === "function" ? item.render() : item.render
+        typeof mockObject[keys].render === "function"
+          ? mockObject[keys].render()
+          : mockObject[keys].render
       );
     });
   });
 };
 
-updateMock();
+initMock();
 
 _fs2.default.watchFile(
   _path2.default.join(process.cwd(), "_mock.js"),
   function() {
-    updateMock();
+    mockObject = (0, _mockConfig2.default)().mockObject;
   }
 );
 exports.default = router;

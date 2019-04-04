@@ -14,7 +14,7 @@
     "dev": "npm start"
   },
   "bin": {
-    "mock-dev": "./bin/development.js",
+    "mock-compile": "babel src/ --out-dir app/ --retain-lines --source-maps",
     "mock": "./bin/production.js"
   },
   "repository": {

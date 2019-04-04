@@ -1,6 +1,6 @@
 {
   "name": "mock-service-sf",
-  "version": "v1.0.3",
+  "version": "v1.0.4",
   "description": "mock-service-sf",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,6 @@
     "dev": "npm start"
   },
   "bin": {
-    "mock-compile": "babel src/ --out-dir app/ --retain-lines --source-maps",
     "mock": "./bin/production.js"
   },
   "repository": {

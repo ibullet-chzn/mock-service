@@ -1,6 +1,6 @@
 {
   "name": "mock-service-sf",
-  "version": "v1.0.1",
+  "version": "v1.0.2",
   "description": "mock-service-sf",
   "main": "index.js",
   "scripts": {

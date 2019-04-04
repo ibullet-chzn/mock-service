@@ -8,7 +8,6 @@ output/
 project.config.json
 package-lock.json
 # Editor directories and files
-.idea
 .vscode
 *.suo
 *.ntvs*

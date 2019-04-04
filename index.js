@@ -1,3 +1,3 @@
 var h = require('./utils');
 
-h.hello('fooke');
+h.hello('fooker');

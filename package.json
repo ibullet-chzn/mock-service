@@ -13,6 +13,10 @@
     "test": "mocha -u bdd --compilers js:babel-core/register",
     "dev": "npm start"
   },
+  "bin": {
+    "mock-dev": "./bin/development.js",
+    "mock": "./bin/production.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ibullet-chzn/mock-service.git"

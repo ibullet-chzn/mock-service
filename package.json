@@ -19,7 +19,4 @@
     "url": "https://github.com/ibullet-chzn/mock-service/issues"
   },
   "homepage": "https://github.com/ibullet-chzn/mock-service#readme",
-  "dependencies": {
-    "mock-service-sf": "^1.0.0"
-  }
 }
